@@ -1,0 +1,10 @@
+C:\Users\WalterJavier.Arce\source\repos\Integrador_Autos\Integrador_Autos\bin\Debug\Integrador_Autos.exe.config
+C:\Users\WalterJavier.Arce\source\repos\Integrador_Autos\Integrador_Autos\bin\Debug\Integrador_Autos.exe
+C:\Users\WalterJavier.Arce\source\repos\Integrador_Autos\Integrador_Autos\bin\Debug\Integrador_Autos.pdb
+C:\Users\WalterJavier.Arce\source\repos\Integrador_Autos\Integrador_Autos\obj\Debug\Integrador_Autos.csprojAssemblyReference.cache
+C:\Users\WalterJavier.Arce\source\repos\Integrador_Autos\Integrador_Autos\obj\Debug\Integrador_Autos.Form1.resources
+C:\Users\WalterJavier.Arce\source\repos\Integrador_Autos\Integrador_Autos\obj\Debug\Integrador_Autos.Properties.Resources.resources
+C:\Users\WalterJavier.Arce\source\repos\Integrador_Autos\Integrador_Autos\obj\Debug\Integrador_Autos.csproj.GenerateResource.cache
+C:\Users\WalterJavier.Arce\source\repos\Integrador_Autos\Integrador_Autos\obj\Debug\Integrador_Autos.csproj.CoreCompileInputs.cache
+C:\Users\WalterJavier.Arce\source\repos\Integrador_Autos\Integrador_Autos\obj\Debug\Integrador_Autos.exe
+C:\Users\WalterJavier.Arce\source\repos\Integrador_Autos\Integrador_Autos\obj\Debug\Integrador_Autos.pdb
