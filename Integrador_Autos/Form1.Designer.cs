@@ -55,13 +55,16 @@
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.dgPersona = new System.Windows.Forms.DataGridView();
             this.dgAutos = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgAutosAsignados = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.grupoPersona.SuspendLayout();
             this.grupoAuto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPersona)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAutos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAutosAsignados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +72,7 @@
             // 
             this.btnAddPersona.BackColor = System.Drawing.Color.Green;
             this.btnAddPersona.ForeColor = System.Drawing.Color.White;
-            this.btnAddPersona.Location = new System.Drawing.Point(25, 364);
+            this.btnAddPersona.Location = new System.Drawing.Point(38, 435);
             this.btnAddPersona.Name = "btnAddPersona";
             this.btnAddPersona.Size = new System.Drawing.Size(117, 23);
             this.btnAddPersona.TabIndex = 0;
@@ -81,7 +84,7 @@
             // 
             this.btnAddCar.BackColor = System.Drawing.Color.Green;
             this.btnAddCar.ForeColor = System.Drawing.Color.White;
-            this.btnAddCar.Location = new System.Drawing.Point(25, 397);
+            this.btnAddCar.Location = new System.Drawing.Point(377, 435);
             this.btnAddCar.Name = "btnAddCar";
             this.btnAddCar.Size = new System.Drawing.Size(117, 23);
             this.btnAddCar.TabIndex = 1;
@@ -93,7 +96,7 @@
             // 
             this.btnEliminarPersona.BackColor = System.Drawing.Color.Red;
             this.btnEliminarPersona.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarPersona.Location = new System.Drawing.Point(163, 364);
+            this.btnEliminarPersona.Location = new System.Drawing.Point(161, 435);
             this.btnEliminarPersona.Name = "btnEliminarPersona";
             this.btnEliminarPersona.Size = new System.Drawing.Size(109, 23);
             this.btnEliminarPersona.TabIndex = 2;
@@ -104,12 +107,13 @@
             // 
             this.btnDeleteCar.BackColor = System.Drawing.Color.Red;
             this.btnDeleteCar.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteCar.Location = new System.Drawing.Point(163, 397);
+            this.btnDeleteCar.Location = new System.Drawing.Point(500, 435);
             this.btnDeleteCar.Name = "btnDeleteCar";
             this.btnDeleteCar.Size = new System.Drawing.Size(109, 23);
             this.btnDeleteCar.TabIndex = 3;
             this.btnDeleteCar.Text = "Eliminar Auto";
             this.btnDeleteCar.UseVisualStyleBackColor = false;
+            this.btnDeleteCar.Click += new System.EventHandler(this.btnDeleteCar_Click);
             // 
             // btnAsignarAuto
             // 
@@ -133,7 +137,7 @@
             this.grupoPersona.Controls.Add(this.txtApellido);
             this.grupoPersona.Controls.Add(this.txtNombre);
             this.grupoPersona.Controls.Add(this.txtDNI);
-            this.grupoPersona.Location = new System.Drawing.Point(772, 185);
+            this.grupoPersona.Location = new System.Drawing.Point(38, 464);
             this.grupoPersona.Name = "grupoPersona";
             this.grupoPersona.Size = new System.Drawing.Size(289, 133);
             this.grupoPersona.TabIndex = 5;
@@ -214,7 +218,7 @@
             this.grupoAuto.Controls.Add(this.cboModelo);
             this.grupoAuto.Controls.Add(this.cboMarca);
             this.grupoAuto.Controls.Add(this.txtPatente);
-            this.grupoAuto.Location = new System.Drawing.Point(749, 329);
+            this.grupoAuto.Location = new System.Drawing.Point(377, 464);
             this.grupoAuto.Name = "grupoAuto";
             this.grupoAuto.Size = new System.Drawing.Size(344, 165);
             this.grupoAuto.TabIndex = 6;
@@ -320,47 +324,73 @@
             // dgPersona
             // 
             this.dgPersona.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPersona.Location = new System.Drawing.Point(25, 13);
+            this.dgPersona.Location = new System.Drawing.Point(25, 34);
             this.dgPersona.Name = "dgPersona";
-            this.dgPersona.Size = new System.Drawing.Size(369, 150);
+            this.dgPersona.Size = new System.Drawing.Size(469, 150);
             this.dgPersona.TabIndex = 7;
-            this.dgPersona.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPersona_CellClick);
-            this.dgPersona.Click += new System.EventHandler(this.dgPersona_Click);
+            this.dgPersona.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPersona_RowEnter);
             // 
             // dgAutos
             // 
             this.dgAutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgAutos.Location = new System.Drawing.Point(400, 13);
+            this.dgAutos.Location = new System.Drawing.Point(500, 34);
             this.dgAutos.Name = "dgAutos";
             this.dgAutos.Size = new System.Drawing.Size(567, 150);
             this.dgAutos.TabIndex = 8;
-            this.dgAutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAutos_CellClick);
-            this.dgAutos.Click += new System.EventHandler(this.dgAutos_Click);
             // 
-            // dataGridView2
+            // dgAutosAsignados
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(25, 169);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(369, 150);
-            this.dataGridView2.TabIndex = 9;
+            this.dgAutosAsignados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAutosAsignados.Location = new System.Drawing.Point(25, 205);
+            this.dgAutosAsignados.Name = "dgAutosAsignados";
+            this.dgAutosAsignados.Size = new System.Drawing.Size(479, 150);
+            this.dgAutosAsignados.TabIndex = 9;
             // 
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(400, 169);
+            this.dataGridView3.Location = new System.Drawing.Point(584, 205);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(367, 150);
             this.dataGridView3.TabIndex = 10;
-            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Propietarios";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(497, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Autos para asignar";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(35, 189);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Autos Asignados";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 534);
+            this.ClientSize = new System.Drawing.Size(1146, 665);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView3);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgAutosAsignados);
             this.Controls.Add(this.dgAutos);
             this.Controls.Add(this.dgPersona);
             this.Controls.Add(this.grupoAuto);
@@ -379,9 +409,10 @@
             this.grupoAuto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPersona)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAutos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAutosAsignados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -414,8 +445,11 @@
         private System.Windows.Forms.TextBox txtPatente;
         private System.Windows.Forms.DataGridView dgPersona;
         private System.Windows.Forms.DataGridView dgAutos;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgAutosAsignados;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

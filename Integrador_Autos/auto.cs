@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Integrador_Autos
 {
-    public class auto
+    public class Auto
     {
-        public auto()
+        public Auto()
         {
             
         }
-        public auto(string patente, string marca , string modelo, string anio, decimal precio)
+        public Auto(string patente, string marca , string modelo, string anio, decimal precio)
         {
             Patente = patente;
             Marca = marca;
@@ -21,28 +21,22 @@ namespace Integrador_Autos
             Anio = anio;
             Precio = precio;
         }
+
+        public  Persona propietario;
         public string Patente { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public string Anio { get; set; }
         public decimal Precio { get; set; }
 
-        public persona propietario { get; set; }
-        public persona Propietario()
-        {
-           
-            return null;
-        }
+       public Persona GetPersona() { return propietario;}
 
-        public override string ToString()
-        {
-            return Patente + Propietario();
-        }
+       public void SetPersona(Persona pPersona)
+       {
+     
+           propietario = pPersona;
+       }
 
-        ~auto()
-        {
-
-        }
 
     }
 }
